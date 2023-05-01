@@ -34,7 +34,7 @@ export default function HomeScreen() {
         style={useColorMode().colorMode === "dark" ? "light" : "dark"}
       />
       <LayoutSpacing bg={bg}>
-        <Greeting userFirstName="Felipe" mb={4} />
+        <Greeting userName="Felipe Santos" mb={4} />
         <Row justifyContent={"space-between"} w="100%">
           <MonthlyExpense monthlyExpense={2000000} />
           <YourSavings yourSavings={200000} />
