@@ -1,11 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<br />
 <div align="center">
   <a href="/">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
@@ -18,19 +10,16 @@
   </p>
 </div>
 
-<!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 ...
 
 ### Construído com
 
-* [![React Native][ReactNative]][https://reactnative.dev/]
-* [![Native Base][NativeBase]][https://nativebase.io/]
-* [![TypeScript][TypeScript]][https://www.typescriptlang.org/]
-* [![Expo][Expo.io]][https://expo.dev/]
+* [React Native](https://reactnative.dev/)
+* [Native Base](https://nativebase.io/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Expo](https://expo.dev/)
 
 ## Começando
 
