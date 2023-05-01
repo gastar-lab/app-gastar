@@ -18,7 +18,6 @@ export function Greeting({
           {userName}
         </Text>
       </VStack>
-      <ThemeToggle />
     </Row>
   );
 }
