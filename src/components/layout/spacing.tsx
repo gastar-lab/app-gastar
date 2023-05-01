@@ -13,8 +13,9 @@ export function LayoutSpacing({
       bg={bg}
       alignItems="center"
       justifyContent="flex-start"
-      p={5}
+      p={3}
       pt={10}
+      pb={0}
     >
       {children}
     </Box>
