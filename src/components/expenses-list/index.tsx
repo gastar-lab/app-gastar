@@ -1,4 +1,4 @@
-import { FlatList, Row, Text, VStack, useColorModeValue } from "native-base";
+import { FlatList, Text, VStack, useColorModeValue } from "native-base";
 import { Expense } from "../../@core/domain/entites";
 import { State } from "@hookstate/core";
 import { Colors, ExpenseItem } from "./expense-item";

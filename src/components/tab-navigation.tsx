@@ -1,10 +1,12 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/home";
 
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useColorModeValue } from "native-base";
+
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+import HomeScreen from "../screens/home";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +20,7 @@ function TabNavigator() {
           borderTopWidth: 0,
           height: 40,
         },
-        tabBarActiveTintColor: useColorModeValue("#1F2937", "white")
+        tabBarActiveTintColor: useColorModeValue("#1F2937", "white"),
       }}
     >
       <Tab.Screen

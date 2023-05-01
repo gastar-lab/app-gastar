@@ -1,23 +1,12 @@
 import React from "react";
 
-import {
-  Box,
-  FlatList,
-  Pressable,
-  Row,
-  Text,
-  VStack,
-  useColorMode,
-  useColorModeValue,
-} from "native-base";
+import { Row, useColorMode, useColorModeValue } from "native-base";
 
 import { useExpenses } from "../../store/global-state";
 import { State } from "@hookstate/core";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { Expense } from "../../@core/domain/entites";
-import ThemeToggle from "../../components/theme-toggle";
 import { StatusBar } from "expo-status-bar";
+import { Expense } from "../../@core/domain/entites";
 import { ExpensesList } from "../../components/expenses-list";
 import { TotalBalance } from "../../components/total-balance";
 import { MonthlyExpense } from "../../components/monthly-expense";
