@@ -1,18 +1,23 @@
-import { Row, Text } from "native-base";
+import { Row, Text, VStack } from "native-base";
 import ThemeToggle from "../theme-toggle";
 
 export function Greeting({
-  userFirstName,
+  userName,
   ...props
 }: {
-  userFirstName: string;
+  userName: string;
   [key: string]: any;
 }) {
   return (
     <Row w="100%" justifyContent={"space-between"} {...props}>
-      <Text fontSize="2xl" fontWeight={"600"}>
-        Olá, {userFirstName}
-      </Text>
+      <VStack>
+        <Text fontSize="md" fontWeight={"300"}>
+          Olá!
+        </Text>
+        <Text fontSize="xl" mt={-1} fontWeight={"500"}>
+          {userName}
+        </Text>
+      </VStack>
       <ThemeToggle />
     </Row>
   );
