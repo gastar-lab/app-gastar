@@ -3,7 +3,7 @@ import { IExpensesService } from "../../domain/services/expenses.service";
 export class ExpensesController {
   constructor(private readonly expensesService: IExpensesService) {}
 
-  async getExpenses(page: number = 1, limit: number = 10) {
+  async getExpenses(page: number, limit: number) {
     return await this.expensesService.getExpenses(page, limit);
   }
 
