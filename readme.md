@@ -16,9 +16,9 @@
 
 ### Construído com
 
-✅ [React Native](https://reactnative.dev/)
-✅ [Native Base](https://nativebase.io/)
-✅ [TypeScript](https://www.typescriptlang.org/)
+✅ [React Native](https://reactnative.dev/)  
+✅ [Native Base](https://nativebase.io/)  
+✅ [TypeScript](https://www.typescriptlang.org/)  
 ✅ [Expo](https://expo.dev/)
 
 ## Começando
