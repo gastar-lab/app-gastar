@@ -7,6 +7,7 @@ import { useColorModeValue } from "native-base";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import HomeScreen from "../screens/home";
+import BudgetsScreen from "../screens/budgets";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,13 +35,13 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Relatório"
-        component={HomeScreen}
+        name="Orçamentos"
+        component={BudgetsScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-              name="desktop-mac-dashboard"
+              name="cash-multiple"
               size={20}
               color={color}
             />
