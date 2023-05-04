@@ -1,11 +1,11 @@
-import { Box } from "native-base";
+import { Box, useColorModeValue } from "native-base";
 
 export function LayoutSpacing({
   children,
-  bg,
+  bg = useColorModeValue("warmGray.100", "coolGray.800"),
 }: {
-  children: JSX.Element[];
-  bg: string;
+  children?: JSX.Element[] | JSX.Element;
+  bg?: string;
 }) {
   return (
     <Box
