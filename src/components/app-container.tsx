@@ -16,7 +16,7 @@ export default function AppContainer() {
   React.useEffect(() => {
     (async () => {
       const expensesResult = await GastarAPI.getExpenses();
-      console.log(expensesResult);
+      // console.log({expensesResult});
       expensesState.set(expensesResult);
     })();
   }, []);
