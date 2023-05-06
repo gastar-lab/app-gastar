@@ -64,9 +64,29 @@ export class ExpensesService implements IExpensesService {
         bankId: "3",
         location: "Aracaju - SE",
       }),
+      new Expense({
+        id: "7",
+        description: "Algum Jogo",
+        value: 420,
+        date: new Date(),
+        categoryId: "4",
+        paymentMethod: "4",
+        bankId: "4",
+        location: "Aracaju - SE",
+      }),
+      new Expense({
+        id: "8",
+        description: "Veterinário",
+        value: 500,
+        date: new Date(),
+        categoryId: "5",
+        paymentMethod: "5",
+        bankId: "5",
+        location: "Aracaju - SE",
+      }),
     ];
 
-    console.log("list", list);
+    // console.log("list", list);
     return Promise.resolve(list);
   }
   getExpenseById(id: string): Promise<Expense> {

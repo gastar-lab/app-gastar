@@ -30,4 +30,6 @@ export class GastarAPI {
     const expensesController = new ExpensesController(expensesService);
     return await expensesController.getExpenses(limit, page);
   }
+
+  
 }

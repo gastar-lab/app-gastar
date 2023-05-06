@@ -18,3 +18,5 @@ web-build/
 
 ideas/
 ```
+.vscode
+yarn.lock
