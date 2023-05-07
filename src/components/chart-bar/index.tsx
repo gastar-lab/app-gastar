@@ -1,23 +1,37 @@
 import React from "react";
 import { Expense } from "../../@core/domain/entites";
 import { State } from "@hookstate/core";
-import { VictoryBar } from "victory-native";
+import { VictoryBar, VictoryLabel } from "victory-native";
 import { useChartBar } from "./hook/useChartBar";
+
+/** const BARS_LIMIT = 5; */
 
 type Props = {
   expenseState: State<Expense[]>;
 };
 
+function limitLabelLength(label: string) {
+  if (label.length > 10) {
+    return label.slice(0, 10) + "...";
+  }
+  return label;
+}
+
 export default function ChartBar({ expenseState }: Props) {
   const { dataToChart } = useChartBar(expenseState);
 
   if (!dataToChart.length) return null;
+
   return (
     <VictoryBar
       data={dataToChart}
       y="value"
-      cornerRadius={16}
-      height={250}
+      cornerRadius={{
+        top: 14,
+        bottom: 14,
+      }}
+      barRatio={0.8}
+      height={225}
       style={{
         labels: {
           fill: "white",
@@ -44,7 +58,10 @@ export default function ChartBar({ expenseState }: Props) {
           width: 30,
         },
       }}
-      labels={({ datum }) => datum.category}
+      labels={({ datum }) => limitLabelLength(datum.category)}
+      labelComponent={
+        <VictoryLabel style={[{ fill: "white", fontSize: 12 }]} />
+      }
       width={350}
     />
   );
