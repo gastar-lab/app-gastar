@@ -1,7 +1,7 @@
 import { Category } from "../../domain/entites";
 import { ICategorysService } from "../../domain/services/category.services";
 
-export class CategorysService implements ICategorysService {
+export class CategoriesService implements ICategorysService {
   async getCategories(page: number, limit: number) {
     const list = [
       new Category({

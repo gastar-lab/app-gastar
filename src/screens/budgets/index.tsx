@@ -5,54 +5,16 @@ import { PageHeader } from "../../components/layout/pages-header";
 import { GastarAPI } from "../../@core/presentation/api";
 import { useExpenses } from "../../store/global-state";
 import ThemeToggle from "../../components/theme-toggle";
-import { VictoryBar } from "victory-native";
 import { Expense } from "../../@core/domain/entites";
 import { State } from "@hookstate/core";
-import { CategorysService } from "../../@core/infra/services/category.services";
-
-type ChartDataType = {
-  category: string | undefined;
-  value: number;
-};
+import ChartBar from "../../components/chart-bar";
 
 export default function BudgetsScreen({ navigation }: { navigation: any }) {
-  const [dataToChart, setDataToChart] = React.useState<ChartDataType[]>([]);
   const expensesState: State<Expense[]> = useExpenses();
-  const categoriesService = new CategorysService();
 
   React.useEffect(() => {
     (async () => {
       const expensesResult = await GastarAPI.getExpenses();
-      let expensesWithCategoryName: ChartDataType[] = [];
-
-      expensesResult.forEach(async (item) => {
-        const category = await categoriesService.getCategoryById(
-          item.categoryId
-        );
-
-        expensesWithCategoryName.push({
-          category: category!.name,
-          value: item.value,
-        });
-
-        const result = expensesWithCategoryName.reduce(
-          (acc: ChartDataType[], obj) => {
-            const category = obj.category;
-            const isRepeat = acc.find((c) => c.category === category);
-
-            if (isRepeat) {
-              isRepeat.value += obj.value;
-            } else {
-              acc.push(obj);
-            }
-
-            return acc;
-          },
-          []
-        );
-
-        setDataToChart(result);
-      });
       expensesState.set(expensesResult);
     })();
   }, []);
@@ -76,42 +38,7 @@ export default function BudgetsScreen({ navigation }: { navigation: any }) {
           <Text color="white" fontWeight={"500"} fontSize="md">
             R$ 1.800,00
           </Text>
-          {dataToChart.length && (
-            <VictoryBar
-              data={dataToChart}
-              y="value"
-              cornerRadius={16}
-              height={250}
-              style={{
-                labels: {
-                  fill: "white",
-                },
-                data: {
-                  fill: ({ datum }) => {
-                    switch (datum.category) {
-                      case "Aluguel":
-                        return "#E0C1FF";
-                      case "Comida":
-                        return "#E4FFC1";
-                      case "Entretenimento":
-                        return "#FFDBDB";
-                      case "Transporte":
-                        return "#FB5D5D";
-                      case "Internet":
-                        return "#fb5";
-                      case "Games":
-                        return "#25cf6f";
-                      default:
-                        return "#ccc";
-                    }
-                  },
-                  width: 30,
-                },
-              }}
-              labels={({ datum }) => datum.category}
-              width={350}
-            />
-          )}
+          <ChartBar expenseState={expensesState} />
         </Box>
 
         <Box
