@@ -25,7 +25,7 @@ function TabNavigator() {
       }}
     >
       <Tab.Screen
-        name="Inicio"
+        name="Home"
         component={HomeScreen}
         options={{
           headerShown: false,
@@ -35,7 +35,7 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Orçamentos"
+        name="Budgets"
         component={BudgetsScreen}
         options={{
           headerShown: false,
@@ -49,7 +49,7 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Notificações"
+        name="Notifications"
         component={HomeScreen}
         options={{
           headerShown: false,
@@ -59,7 +59,7 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Perfil"
+        name="Profile"
         component={HomeScreen}
         options={{
           headerShown: false,
