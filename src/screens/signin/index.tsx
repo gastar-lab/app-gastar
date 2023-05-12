@@ -13,6 +13,7 @@ import {
   Text,
   HStack,
   VStack,
+  StatusBar,
 } from "native-base";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -54,13 +55,14 @@ const Signin = () => {
     console.log("data", data);
     navigation.navigate("Home", { screen: "Home" });
   };
-  
+
   const goToForgotPasswordScreen = () => {};
   const goToSignUpScreen = () => {};
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <Box bg="trueGray.700" height={220} pt={10} px={3}>
+      <StatusBar translucent backgroundColor="transparent" />
+      <Box bg="trueGray.700" height={220} px={3}>
         <ImageBackground
           source={require("../../../assets/g.png")}
           resizeMode="contain"
